@@ -24,5 +24,4 @@ PlanetProjectReact ist eine interaktive 3D-Darstellung von Planeten mit React un
    ```sh
    git clone 
    cd PlanetProjectReact
-# PlanetProjectReact
-# PlanetProjectReact
+
