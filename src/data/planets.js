@@ -20,7 +20,8 @@ const initialPlanets = [
     residents: [
       { name: 'John Doe', birthYear: 1980, height: 180, gender: 'männlich' },
       { name: 'Jane Doe', birthYear: 1985, height: 170, gender: 'weiblich' }
-    ]},
+    ]
+  },
   {
     name: 'Jupiter',
     diameter: 139820,
@@ -30,7 +31,8 @@ const initialPlanets = [
     residents: [
       { name: 'John Doe', birthYear: 1980, height: 180, gender: 'männlich' },
       { name: 'Jane Doe', birthYear: 1985, height: 170, gender: 'weiblich' }
-    ]},
+    ]
+  },
   {
     name: 'Saturn',
     diameter: 116460,
@@ -40,7 +42,9 @@ const initialPlanets = [
     residents: [
       { name: 'John Doe', birthYear: 1980, height: 180, gender: 'männlich' },
       { name: 'Jane Doe', birthYear: 1985, height: 170, gender: 'weiblich' }
-    ]}
+    ]
+  }
 ];
 
 export default initialPlanets;
+

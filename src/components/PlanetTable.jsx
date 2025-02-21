@@ -24,7 +24,7 @@ const PlanetTable = ({ planets, deletePlanet }) => {
           <th>Gravitation</th>
           <th>Terrain</th>
           <th>Bevölkerung</th>
-          <th>Notable Residents</th>
+          <th>Bewohner</th>
           <th>Aktionen</th>
         </tr>
       </thead>
