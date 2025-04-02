@@ -3,6 +3,7 @@ import AddPlanetForm from './components/AddPlanetForm';
 import PlanetTable from './components/PlanetTable';
 import initialPlanets from './data/planets';
 import './styles/App.css';
+import PlanetSearch from './components/PlanetSearch.jsx';
 
 const App = () => {
   const [planets, setPlanets] = useState(initialPlanets);
@@ -18,6 +19,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>Auflistung von Planeten</h1>
+      <PlanetSearch onAddPlanet={addPlanet} />
       <PlanetTable planets={planets} deletePlanet={deletePlanet} />
       <AddPlanetForm addPlanet={addPlanet} />
     </div>

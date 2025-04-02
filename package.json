@@ -16,7 +16,8 @@
     "@react-three/fiber": "^8.17.14",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "three": "^0.173.0"
+    "three": "^0.173.0",
+    "webgl-sdf-generator": "^1.1.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.17.0",
