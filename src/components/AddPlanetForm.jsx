@@ -1,24 +1,31 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addPlanet } from '../redux/planetsSlice';
+import { useNavigate } from 'react-router-dom';
 
-const AddPlanetForm = ({ addPlanet }) => {
+const AddPlanetForm = () => {
   const [name, setName] = useState('');
-  const [diameter, setDiameter] = useState('');
-  const [gravity, setGravity] = useState('');
+  const [climate, setClimate] = useState('');
   const [terrain, setTerrain] = useState('');
   const [population, setPopulation] = useState('');
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addPlanet({ name, diameter, gravity, terrain, population });
-    setName('');
-    setDiameter('');
-    setGravity('');
-    setTerrain('');
-    setPopulation('');
+    const formattedPlanet = {
+      name: name || 'Unbekannt',
+      climate: climate || 'Unbekannt',
+      terrain: terrain || 'Unbekannt',
+      population: population || 'Unbekannt',
+    };
+    dispatch(addPlanet(formattedPlanet)); // Planet wird dem Redux-Store hinzugefügt
+    navigate('/'); // Zurück zur Planetenliste navigieren
   };
 
   return (
     <form onSubmit={handleSubmit}>
+      <h2>Neuen Planeten hinzufügen</h2>
       <input
         type="text"
         placeholder="Name"
@@ -27,17 +34,10 @@ const AddPlanetForm = ({ addPlanet }) => {
         required
       />
       <input
-        type="number"
-        placeholder="Durchmesser (km)"
-        value={diameter}
-        onChange={(e) => setDiameter(e.target.value)}
-        required
-      />
-      <input
-        type="number"
-        placeholder="Gravitation"
-        value={gravity}
-        onChange={(e) => setGravity(e.target.value)}
+        type="text"
+        placeholder="Klima"
+        value={climate}
+        onChange={(e) => setClimate(e.target.value)}
         required
       />
       <input
@@ -49,7 +49,7 @@ const AddPlanetForm = ({ addPlanet }) => {
       />
       <input
         type="number"
-        placeholder="Bevölkerung"
+        placeholder="Population"
         value={population}
         onChange={(e) => setPopulation(e.target.value)}
         required

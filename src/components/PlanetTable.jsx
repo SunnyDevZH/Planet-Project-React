@@ -1,7 +1,12 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { removePlanet } from '../redux/planetsSlice';
 import PlanetCanvas from './Planet';
 
-const PlanetTable = ({ planets, deletePlanet }) => {
+const PlanetTable = () => {
+  const planets = useSelector((state) => state.planets); // Planeten aus dem Redux-Store abrufen
+  const dispatch = useDispatch();
+
   const getRandomColor = () => {
     const letters = '0123456789ABCDEF';
     let color = '#';
@@ -15,16 +20,18 @@ const PlanetTable = ({ planets, deletePlanet }) => {
     return Math.random() * 2 + 1; // Größe zwischen 1 und 3
   };
 
+  const handleDeletePlanet = (name) => {
+    dispatch(removePlanet(name)); // Planet aus dem Redux-Store entfernen
+  };
+
   return (
     <table>
       <thead>
         <tr>
           <th>Name</th>
-          <th>Durchmesser (km)</th>
-          <th>Gravitation</th>
+          <th>Klima</th>
           <th>Terrain</th>
-          <th>Bevölkerung</th>
-          <th>Bewohner</th>
+          <th>Population</th>
           <th>Aktionen</th>
         </tr>
       </thead>
@@ -35,20 +42,16 @@ const PlanetTable = ({ planets, deletePlanet }) => {
               <PlanetCanvas color={getRandomColor()} size={getRandomSize()} />
               {planet.name}
             </td>
-            <td>{planet.diameter}</td>
-            <td>{planet.gravity}</td>
-            <td>{planet.terrain}</td>
-            <td>{planet.population}</td>
-            <td>{
-            planet.residents.map((resident, index) => (
-              <div key={index}>
-                <h3>{resident.name}</h3>
-                <p>Birth: {resident.birthYear} Height: {resident.height}</p>
-              </div>
-            ))}
-            </td>
+            <td>{planet.climate || 'Unbekannt'}</td>
+            <td>{planet.terrain || 'Unbekannt'}</td>
+            <td>{planet.population || 'Unbekannt'}</td>
             <td>
-              <button className="delete-button" onClick={() => deletePlanet(planet.name)}>Löschen</button>
+              <button
+                className="delete-button"
+                onClick={() => handleDeletePlanet(planet.name)}
+              >
+                Löschen
+              </button>
             </td>
           </tr>
         ))}
