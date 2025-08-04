@@ -1,8 +1,10 @@
 # PlanetProjectReact
 
-PlanetProjectReact ist eine interaktive 3D-Darstellung von Planeten mit React und Three.js. Das Projekt ermöglicht es Benutzern, Planeten zu visualisieren, Mini-Planeten um sie kreisen zu lassen und Planeteninformationen anzuzeigen und zu verwalten.
+Dies ist das Frontend für das **PlanetProjectReact**. Es bietet eine interaktive 3D-Darstellung von Planeten und kommuniziert über REST-APIs (Star Wars) mit dem Backend.
 
-## Features
+---
+
+## 🚀 Funktionen
 
 - Interaktive 3D-Darstellung von Planeten
 - Zufällig verteilte Wolken auf den Planeten
@@ -10,32 +12,33 @@ PlanetProjectReact ist eine interaktive 3D-Darstellung von Planeten mit React un
 - Hinzufügen, Anzeigen und Löschen von Planeteninformationen
 - Zufällige Farben und Größen für die Planeten
 
-## Technologien
+---
 
-- [React](https://reactjs.org/)
-- [Three.js](https://threejs.org/)
-- [Vite](https://vitejs.dev/)
+## 🛠️ Technologie
 
-## Installation
+- **React**
+- **Three.js**
+- **Vite**
 
-1. Klonen Sie das Repository:
-   - git clone <REPO-URL>
-   - cd PlanetProjectReact-main
+---
 
-2. Abhängigkeiten installieren:
-   - npm install
+## ⚙️ Installation
 
-3.  Entwicklung starten:
-   - npm run dev
+### 1. Repository klonen
+```bash
+git clone https://github.com/SunnyDevZH/Planet-Project-React
+cd Planet-Project-React
+```
 
-   Vite Server: http://localhost:5173/
-   
-## Test
+### 2. Abhängigkeiten installieren
+```bash
+npm install
+```
 
-- Jest ist ein Test-Framework für JavaScript, das Unit-Tests für React-Anwendungen ermöglicht.
-- Babel wandelt moderne JavaScript-Syntax um, damit Jest den Code versteht. Besonders wichtig ist das für import/export.
-
-Test mit npm test in der Konsole
-
-
-
+### 3. Entwicklung starten
+```bash
+npm run dev
+```
+```bash
+Vite Server: http://localhost:5173/
+```
