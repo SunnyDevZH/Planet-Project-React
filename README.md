@@ -1,4 +1,4 @@
-# PlanetProjectReact
+# Plane tProject React
 
 Dies ist das Frontend für das **PlanetProjectReact**. Es bietet eine interaktive 3D-Darstellung von Planeten und kommuniziert über REST-APIs (Star Wars) mit dem Backend.
 
